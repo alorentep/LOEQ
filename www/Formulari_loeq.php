@@ -14,15 +14,15 @@
     
     <?php
         if (isset($_POST['submit'])) {
-        $usuari = $_POST['usuari'];
+        $usuario = $_POST['usuario'];
         $password = $_POST['password'];
-        $nom = $_POST['nom'];
-        $llinatge1 = $_POST['llinatge1'];
-        $llinatge2 = $_POST['llinatge2'];
+        $nombre = $_POST['nombre'];
+        $apellido_1 = $_POST['apellido_1'];
+        $apellido_2 = $_POST['apellido_2'];
         echo "nom: $nom llinatge1: $llinatge1<br>";
         $output_form = false;
         
-        if (empty($usuari) || empty($password)||empty($nom)||empty($llinatge1)||empty($llinatge2)){
+        if (empty($usuario) || empty($password)||empty($nombre)||empty($apellido_1)||empty($apellido_2)){
             ?>
             <h2>Informació incompleta</h2>
             
@@ -32,7 +32,7 @@
             }
             
         if ($output_form){
-            $dbc = mysqli_connect('172.30.10.172', 'guillem', 'guillem', 'sirius_db')
+            $dbc = mysqli_connect('172.16.1.217', 'alorentep', 'alfonso', 'loeq_db')
         or die('Error connecting to MySQL server.');
         $query = "insert into users (usuari,password,nom,llinatge1,llinatge2) 
                     values ('$usuari','$password','$nom','$llinatge1','$llinatge2');";
@@ -65,9 +65,9 @@
 <label for="nombre">Nombre:</label>
 <input type="text" name="nombre" size="25" maxlength="50"><br><br>
 <label for="apellido_1">Apellidos 1:</label>
-<input type="text" name="apellidos 1" size="20" maxlength="50"><br><br>
+<input type="text" name="apellido_1" size="20" maxlength="50"><br><br>
 <label for="apellidos_2">Apellidos 2:</label>
-<input type="text" name="apellidos 2" size="20" maxlength="50"><br><br>
+<input type="text" name="apellido_2" size="20" maxlength="50"><br><br>
 <label for="correo_electronico">Correo electrónico:</label>
 <input type="text" value="exemple@correu.com" name="correo" size="25" maxlength="100"><br><br>
 
